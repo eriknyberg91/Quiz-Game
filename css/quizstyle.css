@@ -5,7 +5,7 @@
 }
 
 .container {
-    background-color: black;
+    background-color: #fff;
     height: 100vh;
     width: auto;
     display: flex;
@@ -14,7 +14,7 @@
 }
 
 .container #quiz-box {
-    background: #fff;
+    background: #333DFF;
     width: 80vh;
     height: 80vh;
     color: black;
@@ -22,23 +22,40 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: 0 0 10px 2px;
+    
 }
 
 .container #quiz-box #quiz-question {
     font-size: 50px;
+    color: #fff;
+
 }
 
-.container #quiz-box #quiz.options {
-    display: flex;
+#question-answer-box #quiz-options {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 10px;
     
 }
 
-.container #quiz-box #quiz-options button {
+
+
+.container button {
     background-color: blueviolet;
     color: #fff;
     font-size: 25px;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 10px;  
+}
 
-    
+.hide {
+    display: none;
+}
+
+#controller-container button {
+    display: flex;
+    font-size: 50px;
+    padding: 10px;
 }
