@@ -14,7 +14,7 @@
 }
 
 .container #quiz-box {
-    background: #333DFF;
+    background: black;
     width: 80vh;
     height: 80vh;
     color: black;
@@ -42,7 +42,7 @@
 
 
 
-.container button {
+button {
     background-color: blueviolet;
     color: #fff;
     font-size: 25px;
@@ -58,4 +58,10 @@
     display: flex;
     font-size: 50px;
     padding: 10px;
+}
+
+#quiz-box img {
+    width: 250px;
+
+
 }
