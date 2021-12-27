@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/quizstyle.css">
     <title>Quiz Game</title>
+
 </head>
 <body>
     <div class="container">
@@ -14,15 +15,16 @@
             <div id = "question-answer-box" class = "hide">
                 <div id = "quiz-question">Question</div>
                 <div id = "quiz-options">
-                    <button class = "button">Option</button>
-                    <button class = "button">Option</button>
-                    <button class = "button">Option</button>
-                    <button class = "button">Option</button>
+                    <button id = "answer-button-one">Options</button>
+                    <button id = "answer-button-two">Options</button>
+                    <button id = "answer-button-three">Options</button>
+                    <button id = "answer-button-four">Options</button>
                 </div>
             </div>
             <div id = "controller-container">
             <button id = "start-button">Start</button>
-            <button id = "next-question">Next</button>
+            <button id = "previous-question" class = "hide">Previous</button>
+            <button id = "next-question" class = "hide">Next</button>
             </div>
         </div>
     </div>
