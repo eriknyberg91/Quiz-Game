@@ -1,5 +1,4 @@
 const textTest = document.getElementById("quiz-question");
-
 const questionanswerBox = document.getElementById("question-answer-box");
 const questionAsked = document.getElementById("quiz-question");
 const firstAnswer = document.getElementById("answer-button-one");
@@ -13,7 +12,7 @@ let currentQuestionIndex = 0;
 const startButton = document.getElementById("start-button");
 const nextButton = document.getElementById("next-question");
 const previousButton = document.getElementById("previous-question");
-//nextButton.style.display = "none";
+
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", nextButtonAddIndex);
 previousButton.addEventListener("click", previousButtonMinusIndex);
@@ -43,7 +42,6 @@ function nextButtonAddIndex() {
   currentQuestionIndex++;
   showQuestions();
   showAnswers();
-  
 }
 
 function previousButtonMinusIndex() {
