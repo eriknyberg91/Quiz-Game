@@ -6,6 +6,7 @@ const secondAnswer = document.getElementById("answer-button-two");
 const thirdAnswer = document.getElementById("answer-button-three");
 const fourthAnswer = document.getElementById("answer-button-four");
 const optionButtons = document.getElementById("quiz-options");
+
 let currentQuestionIndex = 0;
 let currentAnswerIndex = 0;
 let userScore = 0;

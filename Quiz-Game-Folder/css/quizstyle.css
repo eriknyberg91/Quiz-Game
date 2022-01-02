@@ -27,8 +27,6 @@
     
 }
 
-
-
 .container #quiz-box #quiz-question {
     display: flex;
     font-size: 50px;
@@ -46,8 +44,6 @@
 
     
 }
-
-
 
 #quiz-options button {
     background-color:crimson;
