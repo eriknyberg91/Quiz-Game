@@ -13,17 +13,21 @@ let userScore = 0;
 const startButton = document.getElementById("start-button");
 const nextButton = document.getElementById("next-question");
 const previousButton = document.getElementById("previous-question");
+const resultButton = document.getElementById("show-results")
 
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", nextButtonAddIndex);
 previousButton.addEventListener("click", previousButtonMinusIndex);
+resultButton.addEventListener("click", thanksForPlaying)
 
 function startGame() {
-  startButton.style.display = "none"; //classlist funkar ej?
+  startButton.classList.add("hide"); 
   questionanswerBox.classList.remove("hide");
   previousButton.classList.remove("hide");
   nextButton.classList.remove("hide");
-
+  currentQuestionIndex = 0;
+  currentAnswerIndex = 0;
+  userScore = 0;
   showQuestions();
   showAnswers();
 }
@@ -31,65 +35,81 @@ function startGame() {
 firstAnswer.addEventListener('click', (e) => {
   currentAnswerIndex = 0;
   if (questions[currentQuestionIndex].answers[currentAnswerIndex].correct === true) {
-    alert("Yahoo!");
+
     currentQuestionIndex++;
     userScore++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
   else {
-    alert("Bing bang!")
+
     currentQuestionIndex++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
 })
 secondAnswer.addEventListener('click', (e) => {
   currentAnswerIndex = 1;
   if (questions[currentQuestionIndex].answers[currentAnswerIndex].correct === true) {
-    alert("Yahoo!");
+
     currentQuestionIndex++;
     userScore++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
   else {
-    alert("Bing bang!")
+
     currentQuestionIndex++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
 })
 thirdAnswer.addEventListener('click', (e) => {
   currentAnswerIndex = 2;
   if (questions[currentQuestionIndex].answers[currentAnswerIndex].correct === true) {
-    alert("Yahoo!");
+
     currentQuestionIndex++;
     userScore++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
   else {
-    alert("Bing bang!")
+
     currentQuestionIndex++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
 })
 fourthAnswer.addEventListener('click', (e) => {
   currentAnswerIndex = 3;
   if (questions[currentQuestionIndex].answers[currentAnswerIndex].correct === true) {
-    alert("Yahoo!");
+
     currentQuestionIndex++;
     userScore++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
   else {
-    alert("Bing bang!")
+
     currentQuestionIndex++;
+    checkGameStatus();
     showQuestions();
     showAnswers();
+    
   }
 })
 
@@ -109,13 +129,28 @@ function nextButtonAddIndex() {
   currentQuestionIndex++;
   showQuestions();
   showAnswers();
-  
 }
 
 function previousButtonMinusIndex() {
   currentQuestionIndex--;
   showQuestions();
   showAnswers();
+}
+
+function checkGameStatus () {
+  if(currentQuestionIndex >= questions.length) {
+    questionanswerBox.classList.add("hide");
+    resultButton.classList.remove("hide");
+    previousButton.classList.add("hide");
+    nextButton.classList.add("hide");
+  }
+}
+
+function thanksForPlaying (){
+  alert("Thanks for playing! You got " + userScore + " points out of " + questions.length + ".")
+  resultButton.classList.add("hide");
+  startButton.classList.remove("hide");
+
 }
 
 
@@ -128,7 +163,7 @@ const questions = [
       { text: "10", correct: false },
       { text: "20", correct: true },
     ],
-  },
+  }, 
   {
     question: "What is a second question?",
     answers: [
@@ -164,7 +199,7 @@ const questions = [
       { text: "Maybe", correct: false },
       { text: "Why?", correct: true },
     ],
-  },
+  }, 
 ];
 console.log(questions);
 console.log(questions[currentQuestionIndex].question)
