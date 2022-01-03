@@ -16,10 +16,18 @@ const nextButton = document.getElementById("next-question");
 const previousButton = document.getElementById("previous-question");
 const resultButton = document.getElementById("show-results")
 
+const quizModal = document.getElementById("quiz-game-modal")
+const closeModal = document.getElementById("close")
+const modalHeader = document.getElementById("modal-text-header")
+const modalText = document.getElementById("modal-text-paragraph")
+const closeModalButton = document.getElementById("close-modal")
+
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", nextButtonAddIndex);
 previousButton.addEventListener("click", previousButtonMinusIndex);
 resultButton.addEventListener("click", thanksForPlaying)
+closeModal.addEventListener("click", exitModalWindow)
+closeModalButton.addEventListener("click", exitModalWindow)
 
 function startGame() {
   startButton.classList.add("hide"); 
@@ -148,10 +156,17 @@ function checkGameStatus () {
 }
 
 function thanksForPlaying (){
-  alert("Thanks for playing! You got " + userScore + " points out of " + questions.length + ".")
+  quizModal.style.display = "block";
+  modalHeader.innerText = "Thank you for playing the Quiz-Game!"
+  modalText.innerText = "Your results are: " + userScore + " points out of " + questions.length + "."
   resultButton.classList.add("hide");
   startButton.classList.remove("hide");
 
+
+}
+
+function exitModalWindow () {
+  quizModal.style.display = "none";
 }
 
 
