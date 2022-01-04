@@ -5,7 +5,7 @@
     
 }
 
-.container {
+.quiz-game-container {
     background-color: #fff;
     height: 100vh;
     width: auto;
@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-.container #quiz-box {
+.quiz-game-container #quiz-box {
     background: #3366cc;
     width: 80vh;
     height: 80vh;
@@ -27,12 +27,13 @@
     
 }
 
-.container #quiz-box #quiz-question {
+.quiz-game-container #quiz-box #quiz-question {
     display: flex;
-    font-size: 50px;
+    font-size: 40px;
     color: #fff;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -41,16 +42,15 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 5px;
     column-gap: 10px;
-
-    
 }
 
 #quiz-options button {
-    background-color:crimson;
+    background-color:rgb(182, 26, 57);
     color: #fff;
     font-size: 25px;
     cursor: pointer;
-    margin: 5px 5px;  
+    margin: 5px 5px; 
+ 
 }
 
 #quiz-options button:hover {
@@ -91,7 +91,7 @@
 
 }
 
-.container #quiz-game-modal {
+.quiz-game-container #quiz-game-modal {
     display: none; 
     position: fixed;
     z-index: 1;
@@ -100,7 +100,7 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.container #quiz-game-modal #quiz-game-modal-content {
+.quiz-game-container #quiz-game-modal #quiz-game-modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
@@ -108,30 +108,35 @@
     width: 40%;
 }
 
-.container #modal-text {
+.quiz-game-container #modal-text {
     color: black;
 }
 
-.container #modal-text-header {
+.quiz-game-container #modal-text-header {
     font-size: 50px;
 }
-.container #modal-text-paragraph {
+.quiz-game-container #modal-text-paragraph {
     font-size: 35px;
 }
-.container #close {
+.quiz-game-container #close {
     float: right;
     font-size: 30px;
     color: black;
 }
 
-.container #close:hover,
-.container #close:focus {
+.quiz-game-container #close:hover,
+.quiz-game-container #close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
   
 }
 
-.container #close-modal {
+
+.quiz-game-container #close-modal {
+    cursor: pointer;
     font-size: 25px;
+    padding: 10px;
+    background-color: darkblue;
+    color: #fff;
 }

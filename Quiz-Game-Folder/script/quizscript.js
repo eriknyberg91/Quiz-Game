@@ -12,8 +12,7 @@ let currentAnswerIndex = 0;
 let userScore = 0;
 
 const startButton = document.getElementById("start-button");
-const nextButton = document.getElementById("next-question");
-const previousButton = document.getElementById("previous-question");
+
 const resultButton = document.getElementById("show-results")
 
 const quizModal = document.getElementById("quiz-game-modal")
@@ -23,8 +22,6 @@ const modalText = document.getElementById("modal-text-paragraph")
 const closeModalButton = document.getElementById("close-modal")
 
 startButton.addEventListener("click", startGame);
-nextButton.addEventListener("click", nextButtonAddIndex);
-previousButton.addEventListener("click", previousButtonMinusIndex);
 resultButton.addEventListener("click", thanksForPlaying)
 closeModal.addEventListener("click", exitModalWindow)
 closeModalButton.addEventListener("click", exitModalWindow)
@@ -32,8 +29,6 @@ closeModalButton.addEventListener("click", exitModalWindow)
 function startGame() {
   startButton.classList.add("hide"); 
   questionanswerBox.classList.remove("hide");
-  previousButton.classList.remove("hide");
-  nextButton.classList.remove("hide");
   currentQuestionIndex = 0;
   currentAnswerIndex = 0;
   userScore = 0;
@@ -61,6 +56,7 @@ firstAnswer.addEventListener('click', (e) => {
     
   }
 })
+
 secondAnswer.addEventListener('click', (e) => {
   currentAnswerIndex = 1;
   if (questions[currentQuestionIndex].answers[currentAnswerIndex].correct === true) {
@@ -81,10 +77,10 @@ secondAnswer.addEventListener('click', (e) => {
     
   }
 })
+
 thirdAnswer.addEventListener('click', (e) => {
   currentAnswerIndex = 2;
   if (questions[currentQuestionIndex].answers[currentAnswerIndex].correct === true) {
-
     currentQuestionIndex++;
     userScore++;
     checkGameStatus();
@@ -93,18 +89,17 @@ thirdAnswer.addEventListener('click', (e) => {
     
   }
   else {
-
     currentQuestionIndex++;
     checkGameStatus();
     showQuestions();
     showAnswers();
     
   }
+
 })
 fourthAnswer.addEventListener('click', (e) => {
   currentAnswerIndex = 3;
   if (questions[currentQuestionIndex].answers[currentAnswerIndex].correct === true) {
-
     currentQuestionIndex++;
     userScore++;
     checkGameStatus();
@@ -113,7 +108,6 @@ fourthAnswer.addEventListener('click', (e) => {
     
   }
   else {
-
     currentQuestionIndex++;
     checkGameStatus();
     showQuestions();
@@ -134,17 +128,7 @@ function showAnswers() {
   fourthAnswer.innerText = questions[currentQuestionIndex].answers[3].text
 }
 
-function nextButtonAddIndex() {
-  currentQuestionIndex++;
-  showQuestions();
-  showAnswers();
-}
 
-function previousButtonMinusIndex() {
-  currentQuestionIndex--;
-  showQuestions();
-  showAnswers();
-}
 
 function checkGameStatus () {
   if(currentQuestionIndex >= questions.length) {
@@ -181,45 +165,25 @@ const questions = [
     ],
   }, 
   {
-    question: "What is a second question?",
+    question: "What is 100 / 4?",
     answers: [
-      { text: "Yes", correct: false },
-      { text: "No", correct: false },
-      { text: "Maybe", correct: false },
-      { text: "Why?", correct: true },
+      { text: "22", correct: false },
+      { text: "33", correct: false },
+      { text: "50", correct: false },
+      { text: "25", correct: true },
     ],
   },
   {
-    question: "Which is the best snus?",
+    question: "What is 33 * 3?",
     answers: [
-      { text: "General Lös", correct: false },
-      { text: "Kaliber Vit Portion", correct: true },
-      { text: "Göteborgs Rapé", correct: false },
-      { text: "Jag snusar inte?", correct: false },
-    ],
-  },
-  {
-    question: "What is a fourth question?",
-    answers: [
-      { text: "Yes", correct: false },
-      { text: "No", correct: false },
-      { text: "Maybe", correct: false },
-      { text: "Why?", correct: true },
-    ],
-  },
-  {
-    question: "What is a fifth question?",
-    answers: [
-      { text: "Yes", correct: false },
-      { text: "No", correct: false },
-      { text: "Maybe", correct: false },
-      { text: "Why?", correct: true },
+      { text: "999", correct: false },
+      { text: "99", correct: true },
+      { text: "66", correct: false },
+      { text: "5", correct: false },
     ],
   }, 
 ];
-console.log(questions);
-console.log(questions[currentQuestionIndex].question)
-console.log(questions[currentQuestionIndex].answers)
+
 
 
 
